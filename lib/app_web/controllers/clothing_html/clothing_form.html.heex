@@ -1,0 +1,16 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:nome]} type="text" label="Nome" />
+  <.input field={f[:preco_compra]} type="number" label="Preco compra" step="any" />
+  <.input field={f[:preco_venda]} type="number" label="Preco venda" step="any" />
+  <.input field={f[:preco_vendido]} type="number" label="Preco vendido" step="any" />
+  <.input field={f[:data_compra]} type="datetime-local" label="Data compra" />
+  <.input field={f[:data_venda]} type="datetime-local" label="Data venda" />
+  <.input field={f[:tamanho]} type="text" label="Tamanho" />
+  <.input field={f[:cor]} type="text" label="Cor" />
+  <:actions>
+    <.button>Save Clothing</.button>
+  </:actions>
+</.simple_form>

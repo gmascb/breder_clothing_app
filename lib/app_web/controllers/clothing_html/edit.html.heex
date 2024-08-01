@@ -1,0 +1,8 @@
+<.header>
+  Edit Clothing <%= @clothing.id %>
+  <:subtitle>Use this form to manage clothing records in your database.</:subtitle>
+</.header>
+
+<.clothing_form changeset={@changeset} action={~p"/roupas/#{@clothing}"} />
+
+<.back navigate={~p"/roupas"}>Back to roupas</.back>

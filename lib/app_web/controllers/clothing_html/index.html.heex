@@ -1,0 +1,30 @@
+<.header>
+  Listing Roupas
+  <:actions>
+    <.link href={~p"/roupas/new"}>
+      <.button>New Clothing</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="roupas" rows={@roupas} row_click={&JS.navigate(~p"/roupas/#{&1}")}>
+  <:col :let={clothing} label="Nome"><%= clothing.nome %></:col>
+  <:col :let={clothing} label="Preco compra"><%= clothing.preco_compra %></:col>
+  <:col :let={clothing} label="Preco venda"><%= clothing.preco_venda %></:col>
+  <:col :let={clothing} label="Preco vendido"><%= clothing.preco_vendido %></:col>
+  <:col :let={clothing} label="Data compra"><%= clothing.data_compra %></:col>
+  <:col :let={clothing} label="Data venda"><%= clothing.data_venda %></:col>
+  <:col :let={clothing} label="Tamanho"><%= clothing.tamanho %></:col>
+  <:col :let={clothing} label="Cor"><%= clothing.cor %></:col>
+  <:action :let={clothing}>
+    <div class="sr-only">
+      <.link navigate={~p"/roupas/#{clothing}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/roupas/#{clothing}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={clothing}>
+    <.link href={~p"/roupas/#{clothing}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

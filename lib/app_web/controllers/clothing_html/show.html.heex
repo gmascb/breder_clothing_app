@@ -1,0 +1,22 @@
+<.header>
+  Clothing <%= @clothing.id %>
+  <:subtitle>This is a clothing record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/roupas/#{@clothing}/edit"}>
+      <.button>Edit clothing</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Nome"><%= @clothing.nome %></:item>
+  <:item title="Preco compra"><%= @clothing.preco_compra %></:item>
+  <:item title="Preco venda"><%= @clothing.preco_venda %></:item>
+  <:item title="Preco vendido"><%= @clothing.preco_vendido %></:item>
+  <:item title="Data compra"><%= @clothing.data_compra %></:item>
+  <:item title="Data venda"><%= @clothing.data_venda %></:item>
+  <:item title="Tamanho"><%= @clothing.tamanho %></:item>
+  <:item title="Cor"><%= @clothing.cor %></:item>
+</.list>
+
+<.back navigate={~p"/roupas"}>Back to roupas</.back>
